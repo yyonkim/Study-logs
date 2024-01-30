@@ -1,6 +1,6 @@
 ---
 share: true
-title: 2024-01-30-Obsidian_Github_Publisher_Plugin_Test
+title: 2024-01-30(test) search test for obsidian published contents
 date: 2024-01-30
 tags:
   - test
@@ -10,4 +10,4 @@ topics:
 ---
 
 
-2024-01-30-Obsidian_Github_Publish_Test
+test md for lunr search feature
