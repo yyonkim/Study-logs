@@ -13,21 +13,21 @@ topics:
 
 ### Hard link, Soft link 생성 및 파일 메타데이터 정보 확인
 ---
-> Hard link
+- Create Hard link (하드 링크 생성)
 ```bash
 
 $ ln <source file> <target file>
 
 ```
 
-> Soft link
+- Create Soft link (소프트 링크 생성)
 ```bash
 
 $ ln -s <source file> <target file>
 
 ```
 
-> Stat (metadata)
+- File stat (metadata) (파일 메타데이터 조회)
 ```bash
 
 $ stat <source file>
@@ -48,16 +48,17 @@ $ stat <source file>
 ```
 
 
+
 ### 특정 조건을 가진 파일만 따로 추출하여 옮기기 (one liner)
 ---
-> 예: 유저에게 실행 권한이 있는 파일만 따로 추출하여  /opt/executable 디렉토리로 복제
+- extract files with permission - 예: 유저에게 실행 권한이 있는 파일만 따로 추출하여  /opt/executable 디렉토리로 복제
 ```bash
 
 $ find /파일경로 -type f -perm -u=x -exec cp "{}" /대상경로 \;
 
 ```
 
-> 예: 1M 이상 사이즈의 파일만 따로 추출하여 옮기기
+- extract files with size - 예: 1M 이상 사이즈의 파일만 따로 추출하여 옮기기
 ```bash
 
 $ find /파일경로 -type -f -size +1M -exec mv "{}" /대상경로 \;
@@ -67,6 +68,7 @@ $ find /파일경로 -type -f -size +1M -exec mv "{}" /대상경로 \;
 
 ### 특정 문자열을 가진 파일만 따로 추출하기(grep)
 ---
+- filter files with string
 ```bash
 
 $ grep -rl "찾으려는 문자열" <경로>
@@ -76,6 +78,7 @@ $ grep -rl "찾으려는 문자열" <경로>
 
 ### 파일 내 특정 문자열을 교체하기(Search and replace: 간단한 버전)
 ---
+- search and replace string
 ```bash
 
 $ sed -i s/대상문자열/교체문자열/g <파일명>
@@ -84,7 +87,7 @@ $ sed -i s/대상문자열/교체문자열/g <파일명>
 
 ### 파일 내 특정 조건에 맞는 문자열 찾기(grep: 간단한 버전)
 ---
-> 예) abc로 시작하는 문자열 /  abc로 끝나는 문자열 찾기
+- search pattern - 예) abc로 시작하는 문자열 /  abc로 끝나는 문자열 찾기
 ```bash
 
 # 시작하는 문자열
@@ -97,7 +100,8 @@ $ grep "abc$" <파일명>
 
 ### TAR Archive (압축, 비압축, 추출)
 ---
-> 예) 압축되지 않은 단순 TAR Archive
+
+- Create TAR Archive - 예) 압축되지 않은 단순 TAR Archive
 ```bash
 
 $ tar -cvf /경로/파일명.tar <압축대상>
@@ -107,7 +111,8 @@ $ tar -cvf /경로/파일명.tar <압축대상>
 # -f file name
 
 ```
-> 예) .gz 으로 압축
+
+- Compress with .gz - 예) .gz 으로 압축
 ```bash
 
 $ tar -czvf /경로/파일명.tar.gz <압축대상>
@@ -118,7 +123,8 @@ $ tar -czvf /경로/파일명.tar.gz <압축대상>
 # -f file name
 
 ```
-> 예) .bz2 로 압축
+
+- Compress with bzip - 예) .bz2 로 압축
 ```bash
 
 $ tar -cjvf /경로/파일명.tar.bz2 <압축대상>
@@ -129,14 +135,15 @@ $ tar -cjvf /경로/파일명.tar.bz2 <압축대상>
 # -f file name
 
 ```
-> 예) .zip 으로 압축
+
+- Compress with zip 예) .zip 으로 압축
 ```bash
 
 $ zip -r /경로/파일.zip <압축대상>
 
 ```
 
-> 예) 추출(Extract)
+- Extract - 추출(Extract)
 ```bash
 
 $ tar -xvzf /경로/파일.tar.gz -C <추출경로>
@@ -153,37 +160,37 @@ $ unzip /경로/파일.zip -d <추출경로>
 ```
 
 
-### 패키지 매니저: 인스톨 된 패키지 확인
+### 패키지 매니저: 인스톨 된 패키지 확인(Check installed packages)
 ---
-> yum
+- yum
 ```bash
 
 $ yum list installed | grep httpd 
 
 ```
 
-> apt
+- apt
 ```bash
 
 $ apt list --installed
 
 ```
 
-> rpm
+- rpm
 ```bash
 
 $ rpm -qa
 
 ```
 
-> zypper
+- zypper
 ```bash
 
 $ zypper se --installed-only
 
 ```
 
-> dnf
+- dnf
 ```bash
 
 $ dnf list installed | grep httpd
@@ -191,23 +198,23 @@ $ dnf list installed | grep httpd
 ```
 
 
-### 유저 생성
+### 유저 생성(Create user)
 ---
-> 생성
+- User creation 생성
 ```bash
 
 $ sudo useradd smith
 
 ```
 
-> 로그인 셸 변경
+- Change default login shell 로그인 셸 변경
 ```bash
 
 $ sudo useradd -s /bin/zsh smith
 
 ```
 
-> 생성된 유저를 wheel그룹에 추가 (기존 유저 그룹은 유지)
+- Add user to wheel group 생성된 유저를 wheel그룹에 추가 (기존 유저 그룹은 유지)
 ```bash
 
 $ sudo usermod -aG wheel smith # CentOS, RHEL
@@ -215,7 +222,7 @@ $ sudo adduser smith wheel # Ubuntu, Debian
 
 ```
 
-> 특정 유저를  wheel 그룹에서 제거
+- Delete user from wheel group 특정 유저를  wheel 그룹에서 제거
 ```bash
 
 $ sudo gpasswd -d smith wheel # CentOS, RHEL
@@ -224,9 +231,9 @@ $ sudo deluser smith wheel # Ubuntu, Debian
 ```
 
 
-### 유저 패스워드 활성화/비활성화
+### 유저 패스워드 활성화/비활성화(Active/Deactive user password)
 ---
-> 활성화 (/etc/shadow의 해시된 패스워드가 있음) | 비활성화 (/etc/shadow의 해시된 패스워드 앞 !!가 있음)
+- 활성화 (/etc/shadow의 해시된 패스워드가 있음) | 비활성화 (/etc/shadow의 해시된 패스워드 앞 !!가 있음)
 ```bash
 
 $ sudo passwd -l smith # 패스워드 비활성화
@@ -235,23 +242,23 @@ $ sudo passwd -u smith 활성화
 ```
 
 
-### 두 파일의 문자열 차이 / 두 디렉토리의 컨텐츠 차이 추출
+### 두 파일의 문자열 차이 / 두 디렉토리의 컨텐츠 차이 추출(comm, diff)
 ---
-> 두 파일 간 문자열 차이 (A파일에는 있지만 B파일에는 없는 문자열)
+- 두 파일 간 문자열 차이 (A파일에는 있지만 B파일에는 없는 문자열)
 ```bash
 
 $ comm -23 <(sort A.txt) <(sort B.txt) 
 
 ```
 
-> 단순 비교 후 리디렉션(diff.txt로)
+- 단순 비교 후 리디렉션(diff.txt로)
 ```bash
 
 $ diff 파일1.txt 파일2.txt > diff.txt
 
 ```
 
-> 두 디렉토리 간 컨텐츠 차이  (A디렉토리에만 있는 파일 목록 출력)
+- 두 디렉토리 간 컨텐츠 차이  (A디렉토리에만 있는 파일 목록 출력)
 ```bash
 
 $ diff -rq A B | grep "Only in A:" | sed 's/Only in A: //'
@@ -259,9 +266,9 @@ $ diff -rq A B | grep "Only in A:" | sed 's/Only in A: //'
 ```
 
 
-### 네트워크 인터페이스 IP 주소 및 라우팅 테이블 확인
+### 네트워크 인터페이스 IP 주소 및 라우팅 테이블 확인(ifconfig, ip addr, hostname, route)
 ---
-> IP 주소 확인
+- IP 주소 확인
 ```bash
 
 $ ifconfig
@@ -270,7 +277,7 @@ $ hostname -I #현재 호스트의 IP주소 확인
 
 ```
 
-> 라우팅 테이블 확인
+- 라우팅 테이블 확인
 ```bash
 
 $ route -n
@@ -283,7 +290,7 @@ $ ip addr show
 
 ```
 
-### 현재 열려있는 포트 및 해당 포트에서 수신 중인 서비스 나열
+### 현재 열려있는 포트 및 해당 포트에서 수신 중인 서비스 나열(Listening services, Port)
 ---
 > netstat
 ```bash
@@ -323,7 +330,7 @@ $ chattr +i 파일 # immutable 속성 추가
 ```
 
 
-### 프로세스에 시그널 보내기
+### 프로세스에 시그널 보내기(Sending signal to processes)
 ---
 > 예) httpd 프로세스에  SIGHUP 전송 
 ```bash
