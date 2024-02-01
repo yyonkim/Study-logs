@@ -54,5 +54,5 @@ CVE는 특정 OS 배포판 버전, 특정 패키지, 특정 소프트웨어 및 
 
 
 References
-[+] https://www.redhat.com/ko/topics/security/what-is-cve
-[+] https://security.stackexchange.com/questions/222435/difference-between-cve-and-osvdb
+- https://www.redhat.com/ko/topics/security/what-is-cve
+- https://security.stackexchange.com/questions/222435/difference-between-cve-and-osvdb
