@@ -1,6 +1,6 @@
 ---
 share: true
-title: 2024-02-01 CVE 작동 방식 및 식별 방법
+title: CVE 작동 방식 및 식별 방법
 date: 2024-02-01
 tags:
   - CVE
