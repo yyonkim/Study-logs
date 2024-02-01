@@ -1,5 +1,5 @@
 ---
-title : 2024-01-25(test) OS Category test
+title : (test) OS Category test
 date : "2024-01-25"
 tags : [test, OS]
 topics : [OS]

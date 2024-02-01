@@ -1,6 +1,6 @@
 ---
 share: true
-title: 2024-01-30(test) search test for obsidian published contents
+title: (test) search test for obsidian published contents
 date: 2024-01-30
 tags:
   - test

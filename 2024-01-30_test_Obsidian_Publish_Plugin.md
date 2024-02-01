@@ -1,6 +1,6 @@
 ---
 share: true
-title: 2024-01-30(test) Obsidian Github Publisher Plugin Test
+title: (test) Obsidian Github Publisher Plugin Test
 date: 2024-01-30
 tags:
   - test
