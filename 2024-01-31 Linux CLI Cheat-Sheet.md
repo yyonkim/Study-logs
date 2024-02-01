@@ -1,6 +1,6 @@
 ---
 share: true
-title: 2024-01-31 Linux CLI Cheat Sheet
+title: Linux CLI Cheat Sheet
 date: 2024-01-31
 tags:
   - Linux
