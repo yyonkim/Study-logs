@@ -2,7 +2,7 @@
 title : (test) OS Category test
 date : "2024-01-25"
 tags : [test, OS]
-topics : [OS]
+categories : [OS]
 ---
 
 # Hello World!

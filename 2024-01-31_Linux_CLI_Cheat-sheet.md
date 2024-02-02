@@ -5,7 +5,7 @@ date: 2024-01-31
 tags:
   - Linux
   - Cheat-Sheet
-topics:
+categories:
   - OS
 ---
 
